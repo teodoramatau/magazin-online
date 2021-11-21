@@ -1,2 +1,2 @@
 # magazin-online
-E-commerce page pentru vinuri
+My name is Teo
