@@ -4,13 +4,15 @@ public class Product {
 
 	String nume, soi, tip, culoare; 
 	double pret;
+	int stoc;
 	
-	public Product(String nume, String soi, String tip, String culoare, double pret) {
+	public Product(String nume, String soi, String tip, String culoare, double pret, int stoc) {
 		this.nume = nume;
 		this.soi= soi;
 		this.tip = tip;
 		this.culoare = culoare;
 		this.pret = pret;
+		this.stoc = stoc;
 	}
 	
 	public String getNume() {
@@ -51,6 +53,14 @@ public class Product {
 
 	public void setPret(double pret) {
 		this.pret = pret;
+	}
+	
+	public int getStoc() {
+		return stoc;
+	}
+
+	public void setStoc(int stoc) {
+		this.stoc = stoc;
 	}
 
 	@Override

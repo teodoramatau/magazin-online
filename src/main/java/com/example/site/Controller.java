@@ -17,9 +17,9 @@ public class Controller {
 
 	@RequestMapping(value="/products")
 	public List <Product> getallProduct() {
-		Product p1 = new Product ("Recas Sole", "Chardonnay", "sec", "alb", 59.4);
-		Product p2 = new Product ("Aurelia Visinescu Anima 3", "Feteasca Neagra", "sec", "rosu", 96.09);
-		Product p3 = new Product ("Rasova La Plage", "Pinot Noir", "sec", "rose", 33.3);
+		Product p1 = new Product ("Recas Sole", "Chardonnay", "sec", "alb", 59.4, 10);
+		Product p2 = new Product ("Aurelia Visinescu Anima 3", "Feteasca Neagra", "sec", "rosu", 96.09, 4);
+		Product p3 = new Product ("Rasova La Plage", "Pinot Noir", "sec", "rose", 33.3, 6);
 		
 		return Arrays.asList (p1, p2, p3);
 	}
