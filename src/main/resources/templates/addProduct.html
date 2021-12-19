@@ -1,0 +1,34 @@
+<head>
+<title>Wine Store - Add Products</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<form action="#" th:action="@{/createProduct}" th:object="${product}"
+	method="post">
+	<fieldset>
+		<input type="submit" id="submitButton" th:value="Save">
+		<table>
+			<thead>
+				<tr>
+					<th>Nume</th>
+					<th>Soi</th>
+					<th>Tip</th>
+					<th>Culoare</th>
+					<th>Pret</th>
+					<th>Stoc</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input th:field="*{nume}" /></td>
+					<td><input th:field="*{soi}" /></td>
+					<td><input th:field="*{tip}" /></td>
+					<td><input th:field="*{culoare}" /></td>
+					<td><input th:field="*{pret}" /></td>
+					<td><input th:field="*{stoc}" /></td>
+
+				</tr>
+			</tbody>
+		</table>
+	</fieldset>
+</form>

@@ -1,12 +1,29 @@
 package com.example.site;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Product {
 
-	String nume, soi, tip, culoare; 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	String nume; 
+	String soi; 
+	String tip;
+	String culoare; 
 	double pret;
 	int stoc;
 	
+	public Product() {
+		super();
+	}
+	
 	public Product(String nume, String soi, String tip, String culoare, double pret, int stoc) {
+		super();
 		this.nume = nume;
 		this.soi= soi;
 		this.tip = tip;
@@ -15,6 +32,14 @@ public class Product {
 		this.stoc = stoc;
 	}
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getNume() {
 		return nume;
 	}
@@ -66,7 +91,7 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [nume=" + nume + ", soi=" + soi + ", tip=" + tip + ", culoare=" + culoare + ", pret=" + pret
-				+ "]";
+				+ ", bucati pe stoc=" + stoc + "]";
 	}
 
 }

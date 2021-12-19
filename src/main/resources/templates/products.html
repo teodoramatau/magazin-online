@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Wine Store - Products </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<table>
+	    <thead>
+	        <tr>
+	            <th> Nume </th>
+	            <th> Soi </th>
+	            <th> Tip </th>
+	            <th> Culoare </th>
+	            <th> Pret </th>
+	        </tr>
+	    </thead>
+	    <tbody>
+			<tr th:if="${products.empty}">
+	            <td colspan="2"> Nu sunt produse disponibile </td>
+	        </tr>
+	        <tr th:each="p : ${products}">
+	            <td><span th:text="${p.nume}"> Nume </span></td>
+	            <td><span th:text="${p.soi}"> Soi </span></td>
+	           	<td><span th:text="${p.tip}"> Tip </span></td>
+	            <td><span th:text="${p.culoare}"> Culoare </span></td>
+	            <td><span th:text="${p.pret}"> Pret </span></td>
+	            
+	        </tr>
+	    </tbody>
+	</table>
+</body>
