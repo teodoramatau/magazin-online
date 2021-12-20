@@ -2,16 +2,16 @@ package com.example.site;
 
 import java.util.ArrayList;
 
-public class CosCumparaturi {
+public class Cos {
 
 	private ArrayList<Product> products = new ArrayList<Product>();
 	private double pretTotal;
 	
-	public CosCumparaturi() {
+	public Cos() {
 		super();
 	}
 	
-	public CosCumparaturi(ArrayList<Product> products, double pretTotal) {
+	public Cos(ArrayList<Product> products, double pretTotal) {
 		super();
 		this.products = products;
 		this.pretTotal = pretTotal;
