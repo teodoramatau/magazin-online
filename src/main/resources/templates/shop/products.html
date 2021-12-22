@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Wine Store - Products </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<form action="#" th:action="@{/sendOrder}" th:object="${orderDto}" method="post">
+    <table>
+        <thead>
+        <tr>
+            <th> Nume</th>
+            <th> Soi</th>
+            <th> Tip</th>
+            <th> Culoare</th>
+            <th> Stoc</th>
+            <th> Pret</th>
+            <th> Cantitate Selectata</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${products.empty}">
+            <td colspan="2"> Nu sunt produse disponibile</td>
+        </tr>
+        <tr th:each="p : ${products}">
+            <td><span th:text="${p.name}"> Nume </span></td>
+            <td><span th:text="${p.soi}"> Soi </span></td>
+            <td><span th:text="${p.tip}"> Tip </span></td>
+            <td><span th:text="${p.culoare}"> Culoare </span></td>
+            <td><span th:text="${p.stoc}"> Culoare </span></td>
+            <td><span th:text="${p.pret}"> Pret </span></td>
+            <td>
+                <input type="number" th:name="|products[${p.id}]|" min="0" th:max="${p.stoc}" step="1" value="0"/>
+            </td>
+<!--            <td>-->
+<!--                <input hidden th:name="|products[$p.id]" th:value="${p.id}"/>-->
+<!--            </td>-->
+
+<!--            <td><input type="number" th:field="*{books[__${itemStat.index}__].title}" min="0" th:max="${p.stoc}" step="1" value="0"></td>-->
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <label>
+        Client Name:
+        <input th:field="*{clientName}" required="required" pattern="[A-Za-z0-9]{1,20}"/>
+    </label>
+    <br>
+    <label>
+        Client Address:
+        <input th:field="*{clientAddress}" />
+    </label>
+    <br>
+    <label>
+        Client Email:
+        <input th:field="*{clientEmail}" />
+    </label>
+    <br>
+    <label>
+        Client Phone:
+        <input th:field="*{clientPhone}" />
+    </label>
+    <br>
+    <input type="submit" id="submitButton" th:value="Save">
+</form>
+</body>

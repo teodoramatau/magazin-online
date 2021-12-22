@@ -5,6 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+	<h3>Products</h3>
+	<p>Adauga un produs <a href="/addProduct">aici</a></p>
 	<table>
 	    <thead>
 	        <tr>
@@ -13,6 +15,7 @@
 	            <th> Tip </th>
 	            <th> Culoare </th>
 	            <th> Pret </th>
+				<th> Actions</th>
 	        </tr>
 	    </thead>
 	    <tbody>
@@ -20,13 +23,50 @@
 	            <td colspan="2"> Nu sunt produse disponibile </td>
 	        </tr>
 	        <tr th:each="p : ${products}">
-	            <td><span th:text="${p.nume}"> Nume </span></td>
+	            <td><span th:text="${p.name}"> Nume </span></td>
 	            <td><span th:text="${p.soi}"> Soi </span></td>
 	           	<td><span th:text="${p.tip}"> Tip </span></td>
 	            <td><span th:text="${p.culoare}"> Culoare </span></td>
 	            <td><span th:text="${p.pret}"> Pret </span></td>
-	            
+	            <td><span th:text="${p.stoc}"> Stoc </span></td>
+	            <td>
+					<a th:href="${'updateProduct/' + p.id }">Update</a>
+					<a th:href="${'deleteProduct/' + p.id }">Delete</a>
+				</td>
 	        </tr>
 	    </tbody>
+	</table>
+
+	<h3>Orders</h3>
+	<table>
+		<thead>
+		<tr>
+			<th> Id </th>
+			<th> Client name </th>
+			<th> Client address </th>
+			<th> Client email </th>
+			<th> Client phone </th>
+			<th> Products</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:if="${orders.empty}">
+			<td colspan="2"> 0 comenzi procesate </td>
+		</tr>
+		<tr th:each="o : ${orders}">
+			<td><span th:text="${o.id}"></span></td>
+			<td><span th:text="${o.clientName}"></span></td>
+			<td><span th:text="${o.clientAddress}"></span></td>
+			<td><span th:text="${o.clientEmail}"> Culoare </span></td>
+			<td><span th:text="${o.clientPhone}"> Pret </span></td>
+			<td>
+				<ul>
+					<li th:each="orderedProducts :${o.orderedProducts}">
+						<span th:text="${orderedProducts.product.name}"></span> - <span th:text="${orderedProducts.quantity}"></span>
+					</li>
+				</ul>
+			</td>
+		</tr>
+		</tbody>
 	</table>
 </body>

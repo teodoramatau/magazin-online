@@ -1,14 +1,16 @@
 <head>
-<title>Wine Store - Add Products</title>
+<title>Wine Store - Update Products</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
-<form action="#" th:action="@{/createProduct}" th:object="${product}" method="post">
+<form action="#" th:action="@{/createProduct}" th:object="${product}"
+	method="post">
 	<fieldset>
 		<input type="submit" id="submitButton" th:value="Save">
 		<table>
 			<thead>
 				<tr>
+					<th>Id</th>
 					<th>Nume</th>
 					<th>Soi</th>
 					<th>Tip</th>
@@ -19,6 +21,7 @@
 			</thead>
 			<tbody>
 				<tr>
+					<td><input th:field="*{id}" readonly/></td>
 					<td><input th:field="*{name}" /></td>
 					<td><input th:field="*{soi}" /></td>
 					<td><input th:field="*{tip}" /></td>
