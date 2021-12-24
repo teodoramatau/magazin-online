@@ -1,6 +1,5 @@
 package com.example.site.dto;
 
-import javax.persistence.Column;
 import java.util.List;
 
 public class OrderDto {

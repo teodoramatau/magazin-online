@@ -46,7 +46,6 @@ public class OrderService {
                 continue;
             }
 
-            // daca nu are cantitate
             if (Integer.parseInt(quantity) == 0) {
                 productId++;
                 continue;

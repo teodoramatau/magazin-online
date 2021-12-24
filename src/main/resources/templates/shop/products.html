@@ -32,11 +32,6 @@
             <td>
                 <input type="number" th:name="|products[${p.id}]|" min="0" th:max="${p.stoc}" step="1" value="0"/>
             </td>
-<!--            <td>-->
-<!--                <input hidden th:name="|products[$p.id]" th:value="${p.id}"/>-->
-<!--            </td>-->
-
-<!--            <td><input type="number" th:field="*{books[__${itemStat.index}__].title}" min="0" th:max="${p.stoc}" step="1" value="0"></td>-->
             <td></td>
         </tr>
         </tbody>
@@ -45,22 +40,22 @@
     <br>
     <br>
     <label>
-        Client Name:
+        Nume client:
         <input th:field="*{clientName}" required="required" pattern="[A-Za-z0-9]{1,20}"/>
     </label>
     <br>
     <label>
-        Client Address:
+        Adresa client:
         <input th:field="*{clientAddress}" />
     </label>
     <br>
     <label>
-        Client Email:
+        Email client:
         <input th:field="*{clientEmail}" />
     </label>
     <br>
     <label>
-        Client Phone:
+        Telefon client:
         <input th:field="*{clientPhone}" />
     </label>
     <br>

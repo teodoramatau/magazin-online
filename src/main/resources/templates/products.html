@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h3>Products</h3>
+	<h3>Produse</h3>
 	<p>Adauga un produs <a href="/addProduct">aici</a></p>
 	<table>
 	    <thead>
@@ -15,7 +15,8 @@
 	            <th> Tip </th>
 	            <th> Culoare </th>
 	            <th> Pret </th>
-				<th> Actions</th>
+	            <th> Stoc </th>
+				<th> Actiuni</th>
 	        </tr>
 	    </thead>
 	    <tbody>
@@ -30,23 +31,23 @@
 	            <td><span th:text="${p.pret}"> Pret </span></td>
 	            <td><span th:text="${p.stoc}"> Stoc </span></td>
 	            <td>
-					<a th:href="${'updateProduct/' + p.id }">Update</a>
-					<a th:href="${'deleteProduct/' + p.id }">Delete</a>
+					<a th:href="${'updateProduct/' + p.id }">Actualizeaza</a>
+					<a th:href="${'deleteProduct/' + p.id }">Sterge</a>
 				</td>
 	        </tr>
 	    </tbody>
 	</table>
 
-	<h3>Orders</h3>
+	<h3>Comenzi</h3>
 	<table>
 		<thead>
 		<tr>
 			<th> Id </th>
-			<th> Client name </th>
-			<th> Client address </th>
-			<th> Client email </th>
-			<th> Client phone </th>
-			<th> Products</th>
+			<th> Nume client </th>
+			<th> Adresa client </th>
+			<th> Email client </th>
+			<th> Telefon client </th>
+			<th> Produse </th>
 		</tr>
 		</thead>
 		<tbody>
@@ -57,8 +58,8 @@
 			<td><span th:text="${o.id}"></span></td>
 			<td><span th:text="${o.clientName}"></span></td>
 			<td><span th:text="${o.clientAddress}"></span></td>
-			<td><span th:text="${o.clientEmail}"> Culoare </span></td>
-			<td><span th:text="${o.clientPhone}"> Pret </span></td>
+			<td><span th:text="${o.clientEmail}"></span></td>
+			<td><span th:text="${o.clientPhone}"></span></td>
 			<td>
 				<ul>
 					<li th:each="orderedProducts :${o.orderedProducts}">

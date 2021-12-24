@@ -28,16 +28,6 @@ public class ShopController {
         return "shop/products";
     }
 
-//    @PostMapping("/sendOrder")
-//    public String createOrder(@ModelAttribute Order order, Model model) {
-//        try {
-//            Order savedOrder = orderService.addInTable(order);
-//            return "redirect:/shop/success/" + savedOrder.getId();
-//        } catch (Exception ex) {
-//            return "redirect:/shop/error";
-//        }
-//    }
-
     @PostMapping("/sendOrder")
     public String createOrder(@ModelAttribute OrderDto orderDto) {
         try {

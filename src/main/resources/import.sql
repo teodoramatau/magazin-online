@@ -4,5 +4,5 @@ INSERT INTO products (name, soi, tip, culoare, pret, stoc) values ('Rasova La Pl
 INSERT INTO products (name, soi, tip, culoare, pret, stoc) values ('Tarapaca Gran Reserva', 'Cabernet Sauvignon', 'sec', 'rosu', 69.5, 8);
 INSERT INTO products (name, soi, tip, culoare, pret, stoc) values ('Dealu Negru Jelna', 'Merlot', 'sec', 'rose', 40.8, 7);
 
-INSERT INTO orders VALUES(1, 'Str Nae Leonard', 'pampam@gmail.com', 'Pam Pam', '112');
+INSERT INTO orders VALUES(1, 'Str Saturn, nr.30', 'cristian.moraru@gmail.com', 'Cristian Moraru', '0703000098');
 INSERT INTO ordered_products (order_id, product_id, quantity) VALUES(1, 1, 10);
